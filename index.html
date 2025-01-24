@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu site</title>
+    <style>
+.image-container {
+    display: flex;
+    justify-content: center;  /* Centraliza as imagens na linha */
+    align-items: center;      /* Alinha as imagens verticalmente */
+    gap: 20px;                /* Espaço entre as imagens */
+    text-align: center;       /* Centraliza as legendas */
+}
+
+/* Estilo para as figuras e imagens */
+figure {
+    margin: 0;                /* Remove margens extras das figuras */
+    width: 50%;               /* Define uma largura de 50% para cada figura */
+}
+
+.hobby-image {
+    width: 100%;              /* Faz com que a imagem ocupe toda a largura do seu contêiner */
+    height: auto;             /* Mantém a proporção original da imagem */
+    max-height: 400px;        /* Define um limite máximo para a altura da imagem */
+    object-fit: contain;      /* Ajusta a imagem para não ser cortada, mantendo a proporção */
+}
+
+/* Estilo da legenda */
+figcaption {
+    font-style: italic;       /* Deixa a legenda em itálico */
+    margin-top: 10px;         /* Espaço entre a imagem e a legenda */
+}
+
+/* Estilo global para a body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #dffaff;
+    color: #333;
+}
+
+/* Ajustes para o menu fixo */
+header.menu {
+    background-color: blanchedalmond;  /* Azul bebê */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+header.menu nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+header.menu nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+header.menu nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+header.menu nav ul li a:hover,
+header.menu nav ul li a:focus {
+    background-color: goldenrod; 
+    border-radius: 4px;
+}
+
+header.menu nav ul li a:focus {
+    outline: 3px solid #ff0000; /* Foco visível (dourado) */
+    outline-offset: 4px; /* Distância do foco */
+}
+
+/* Estilo para as seções */
+section {
+    padding: 60px 20px; /* Espaço suficiente para o conteúdo não ficar por baixo do menu fixo */
+    margin-top: 60px;
+    text-align: center;
+}
+
+/* Estilo individual para cada seção */
+#home {
+    background-color: #A2C9E7; /* Azul bebê */
+    color: #333;
+}
+
+#Rotina {
+    background-color: #8BB9D1; /* Azul bebê mais intenso */
+    color: #333;
+}
+
+#Hobbies {
+    background-color: #B3D8E7; /* Azul bebê mais suave */
+    color: #333;
+}
+
+#contato {
+    background-color: #A2C9E7; /* Azul bebê */
+    color: #333;
+}
+
+/* Acessibilidade: boas práticas de contraste */
+a {
+    color: #8BB9D1; /* Azul bebê mais intenso */
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    color: #4C8B9B; /* Azul mais escuro para hover/foco */
+    text-decoration: underline;
+}
+
+#titulo {
+    background-color: #A2C9E7; /* Azul bebê */
+    padding: 100px; /* Adiciona espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+}
+
+#titulo h1 {
+    font-size: 36px; /* Aumenta o tamanho da fonte */
+    color: #333; /* Cor do texto em cinza escuro */
+    text-align: center; /* Centraliza o título */
+    margin: 0; /* Remove margens extras */
+}
+
+.mão {
+    animation: acenar 2s ease-in-out infinite;
+}
+
+@keyframes acenar {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(15deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+img {
+    width: 150px;
+    height: auto;
+}
+
+.eu img {
+    width: 150px; /* Ajusta o tamanho da imagem */
+    height: 150px; /* Mantém a altura proporcional */
+    border-radius: 50%; /* Torna a imagem arredondada */
+    object-fit: cover; /* Garante que a imagem não fique distorcida ao cortar a área de ajuste */
+}
+
+/* Estilo do link */
+a {
+  color: #020077;  /* Cor inicial azul */
+  text-decoration: none;  /* Remove o sublinhado */
+  font-weight: bold;  /* Torna o texto mais destacado */
+  font-size: 20px;  /* Tamanho da fonte aumentado */
+  transition: color 0.3s, text-decoration 0.3s; /* Transição suave */
+}
+
+  /* Estilo quando o link está em foco (selecionado via teclado) */
+  a:focus {
+    color: #ff6600;  /* Cor laranja quando em foco */
+    text-decoration: underline;  /* Sublinhar quando focado */
+    outline: none;  /* Remove o contorno padrão do navegador */
+    box-shadow: 0 0 5px 2px rgba(255, 102, 0, 0.6);  /* Adiciona uma sombra laranja suave */
+  }
+
+  /* Estilo do link quando o mouse passa por cima */
+  a:hover {
+    color: #ff6600;  /* Cor laranja quando o mouse está sobre o link */
+    text-decoration: underline;  /* Sublinhar ao passar o mouse */
+  }
+
+   /* Estilo básico do botão */
+   .btn {
+            background-color: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, text-decoration 0.3s;
+        }
+
+        /* Efeito de hover no botão */
+        .btn:hover {
+            background-color: #998200;
+        }
+
+        /* Estilo do botão quando em foco (navegação com o teclado) */
+        .btn:focus {
+            outline: none; /* Remove o contorno padrão do navegador */
+            box-shadow: 0 0 10px 4px rgba(180, 137, 7, 0.8); /* Sombra azul visível */
+            background-color: #998a00; /* Cor de fundo escurecida */
+        }
+
+        /* Estilo da área de especificações (inicialmente oculta) */
+        .specs {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            display: none;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilo dos detalhes das especificações */
+        .specs p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="menu" role="navigation">
+        <nav>
+            <ul>
+                <li><a href="#home" title="Ir para a seção Início">Início</a></li>
+                <li><a href="#Rotina" title="Ir para a seção Rotina">Rotina</a></li>
+                <li><a href="#Hobbies" title="Ir para a seção Hobbies">Hobbies</a></li>
+                <li><a href="#contato" title="Ir para a seção Contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="titulo">
+            <h1>Bem-vindo ao meu site pessoal!</h1>
+            <div class="mão">
+                <img src="mao.png" alt="Mão acenando">
+            </div>
+        </section>
+        <section id="home">
+            <h1>Quem sou</h1>
+            <div class="eu" >
+                <img src="eu.jpg" title="Olá sou o Miguel" alt="sou o Miguel">
+                
+            </div>
+            <p>Atualmente, sou estudante do Instituto do Emprego e Formação Profissional (IEFP), no Centro de Emprego e Formação Profissional de Braga, onde frequento o curso de Técnico Especialista em Tecnologias e Programação de Sistemas de Informação. Este curso tem sido uma excelente oportunidade para aprofundar os meus conhecimentos na área da informática, com foco na programação e no desenvolvimento de sistemas. Com este percurso, espero adquirir as competências necessárias para seguir uma carreira na área da tecnologia.</p>
+            <p>Decidi criar este site porque me foi proposto o desafio de desenvolver uma plataforma que falasse sobre mim, mas com um foco importante: garantir que seguisse as normas de acessibilidade AA.</p>
+            <p>O objetivo é habituar-me a aplicar boas práticas de design onde qualquer pessoa, independentemente de suas necessidades, possa acessar e entender o conteúdo.</p>
+            <p>Além disso este projeto foi uma oportunidade de desenvolver minhas habilidades em HTML, CSS e javaScript.</p>
+        </section>
+       
+
+        <section id="Rotina">
+            <h1>Rotina</h1>
+        
+            <p>Grande parte do meu tempo é passado no computador, dividindo-o entre estudar e jogar enquanto falo com amigos.</p>
+            <br>
+            <!-- Container para as imagens com legendas -->
+            <div class="image-container">
+                <figure>
+                    <img src="setup.jpg" alt="Home office/setup" class="hobby-image">
+                    <figcaption>Home office/setup</figcaption>
+                </figure>
+
+                <div style="text-align: center; margin-top: 50px;">
+                    <h2>Especificações do meu PC</h2>
+                    
+                    <!-- Botão para mostrar as especificações -->
+                    <button class="btn" onclick="mostrarSpecs()">Ver Especificações</button>
+                    
+                    <!-- Área que exibe as especificações -->
+                    <div class="specs" id="specs">
+                        <p><strong>Processador:</strong> Intel Core i5 12400f</p>
+                        <p><strong>Memória RAM:</strong> 16GB DDR4</p>
+                        <p><strong>Placa Gráfica:</strong> NVIDIA RTX 3050</p>
+                        <p><strong>Armazenamento:</strong> 500 GB SSD + 300 GB HDD</p>
+                        <p><strong>Monitor:</strong> BENQ xl2411p</p>
+                    </div>
+                </div>
+            
+                <script>
+                    function mostrarSpecs() {
+                        // Obter o elemento com o id "specs"
+                        var specs = document.getElementById("specs");
+                        
+                        // Alternar a visibilidade da área de especificações
+                        if (specs.style.display === "none" || specs.style.display === "") {
+                            specs.style.display = "block";
+                        } else {
+                            specs.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
+            <br>
+            <div>
+                <p>Durante as minhas pesquisas autodidatas e tentativas de aprendizagem autónoma nesta área da programação deparei-me com um canal de Youtube que gostaria de partilhar por achar que seja do interesse de qualquer aluno desta área.</p>
+                <div style="text-align: center;">
+                    <h2>Exemplo de um vídeo deste canal</h2>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/YTxrjJS6rpE?si=IWV-f-OJs0BqX5Ow" 
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    
+                    
+                        <p><strong>Canal:</strong> 
+                          <a href="https://www.youtube.com/@GiraffeAcademy" target="_blank">GiraffeAcademy</a>
+                        </p>
+                      </div>
+                  </div>
+            </div>
+        </section>
+
+        <section id="Hobbies">
+            <h1>Hobbies</h1>
+            <p>Um dos meus principais passatempos sempre foi <b>jogar videojogos</b>, especialmente desde que recebi uma PlayStation 2. 
+                Hoje em dia, os meus jogos favoritos são League of Legends e Counter-Strike 2.
+                Ambos são jogos competitivos online e exigem habilidades estratégicas.
+            </p>
+        
+            <br>
+        
+            <!-- Container para as imagens com legendas -->
+            <div class="image-container">
+                <figure>
+                    <img src="lol2.jpg" alt="Jogo League of Legends" class="hobby-image">
+                    <figcaption>Jogo League of Legends</figcaption>
+                </figure>
+                <figure>
+                    <img src="counter-strike-2-pc-jogo-steam-cover.jpg" alt="Jogo CounterStrike 2" class="hobby-image">
+                    <figcaption>Jogo Counter-Strike 2</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        
+        <section id="contato">
+            <h1>Contato</h1>
+            <p>Email: trabalhamiguel@gmail.com</p>
+        </section>
+    </footer>
+
+</body>
+<script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+</html>
